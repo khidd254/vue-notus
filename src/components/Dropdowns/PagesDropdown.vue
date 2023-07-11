@@ -6,7 +6,7 @@
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
     >
-      Demo Pages
+      WEB PAGES
     </a>
     <div
       ref="popoverDropdownRef"
@@ -19,31 +19,31 @@
       <span
         class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        Admin Layout
+        Sacco Banking
       </span>
       <router-link
         to="/admin/dashboard"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Dashboard
+        Customer profile
       </router-link>
       <router-link
         to="/admin/settings"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Settings
+        Acoount <Details></Details>
       </router-link>
       <router-link
         to="/admin/tables"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Tables
+        Customer Loans
       </router-link>
       <router-link
         to="/admin/maps"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Maps
+        Transactions History
       </router-link>
       <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
       <span

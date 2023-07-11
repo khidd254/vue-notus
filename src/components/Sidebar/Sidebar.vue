@@ -75,7 +75,7 @@
         <h6
           class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
         >
-          Admin Layout Pages
+          Sacco Banking
         </h6>
         <!-- Navigation -->
 
@@ -99,7 +99,7 @@
                   class="fas fa-tv mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Dashboard
+                Customer profile
               </a>
             </router-link>
           </li>
@@ -123,7 +123,7 @@
                   class="fas fa-tools mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Settings
+                Account Details
               </a>
             </router-link>
           </li>
@@ -147,7 +147,7 @@
                   class="fas fa-table mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Tables
+                Customer Loans
               </a>
             </router-link>
           </li>
@@ -168,7 +168,7 @@
                   class="fas fa-map-marked mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
                 ></i>
-                Maps
+                Transactions History
               </a>
             </router-link>
           </li>
