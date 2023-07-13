@@ -26,6 +26,8 @@ import Maps from "@/views/admin/Maps.vue";
 
 import Login from "@/views/auth/Login.vue";
 import Register from "@/views/auth/Register.vue";
+import Forget from "@/views/auth/Forget.vue";
+
 
 // views without layouts
 
@@ -71,6 +73,10 @@ const routes = [
       {
         path: "/auth/register",
         component: Register,
+      },
+      {
+        path: "/auth/forget",
+        component: Forget ,
       },
     ],
   },

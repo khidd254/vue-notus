@@ -7,7 +7,7 @@
         <div class="flex flex-wrap">
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="TRAFFIC"
+              statSubtitle="market growth"
               statTitle="350,897"
               statArrow="up"
               statPercent="3.48"

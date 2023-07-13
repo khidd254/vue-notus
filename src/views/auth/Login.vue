@@ -87,7 +87,7 @@
         </div>
         <div class="flex flex-wrap mt-6 relative">
           <div class="w-1/2">
-            <router-link to="/auth/Forget.vue" class="text-blueGray-200">
+            <router-link to="/auth/Forget" class="text-blueGray-200">
               <small>Forgot password?</small>
             </router-link>
           </div>
