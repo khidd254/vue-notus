@@ -22,19 +22,19 @@
         WEB PAGES
       </span>
       <router-link
-        to="/admin/dashboard"
+        to="/admin/customerprofile"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Customer Profile
       </router-link>
       <router-link
-        to="/admin/settings"
+        to="/admin/accountdetails"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Account Details
       </router-link>
       <router-link
-        to="/admin/tables"
+        to="/admin/loans"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Customer Loans
@@ -44,6 +44,12 @@
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
         Transaction History
+      </router-link>
+      <router-link
+        to="/auth/login"
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+      >
+        Login/Signup
       </router-link>
     </div>
   </div>

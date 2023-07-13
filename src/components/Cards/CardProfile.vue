@@ -1,94 +1,255 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16"
+    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0"
   >
-    <div class="px-6">
-      <div class="flex flex-wrap justify-center">
-        <div class="w-full px-4 flex justify-center">
-          <div class="relative">
-            <img
-              alt="..."
-              :src="team2"
-              class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
-            />
-          </div>
-        </div>
-        <div class="w-full px-4 text-center mt-20">
-          <div class="flex justify-center py-4 lg:pt-4 pt-8">
-            <div class="mr-4 p-3 text-center">
-              <span
-                class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
-              >
-                22
-              </span>
-              <span class="text-sm text-blueGray-400">Friends</span>
-            </div>
-            <div class="mr-4 p-3 text-center">
-              <span
-                class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
-              >
-                10
-              </span>
-              <span class="text-sm text-blueGray-400">Photos</span>
-            </div>
-            <div class="lg:mr-4 p-3 text-center">
-              <span
-                class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
-              >
-                89
-              </span>
-              <span class="text-sm text-blueGray-400">Comments</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-12">
-        <h3
-          class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2"
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+      <div class="text-center flex justify-between">
+        <h6 class="text-blueGray-700 text-xl font-bold">MY ACCOUNT DETAILS</h6>
+        <button
+          v-if="!editing"
+          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+          type="button"
+          @click="editDetails"
         >
-          Jenna Stones
-        </h3>
-        <div
-          class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
+          Edit
+        </button>
+        <button
+          v-if="editing"
+          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+          type="button"
+          @click="saveDetails"
         >
-          <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-          Los Angeles, California
-        </div>
-        <div class="mb-2 text-blueGray-600 mt-10">
-          <i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-          Solution Manager - Creative Tim Officer
-        </div>
-        <div class="mb-2 text-blueGray-600">
-          <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-          University of Computer Science
-        </div>
+          Save
+        </button>
       </div>
-      <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-        <div class="flex flex-wrap justify-center">
-          <div class="w-full lg:w-9/12 px-4">
-            <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-              An artist of considerable range, Jenna the name taken by
-              Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and
-              records all of his own music, giving it a warm, intimate feel with
-              a solid groove structure. An artist of considerable range.
-            </p>
-            <a href="javascript:void(0);" class="font-normal text-emerald-500">
-              Show more
-            </a>
+    </div>
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+      <form>
+        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+          Personal Details
+        </h6>
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="firstName"
+              >
+                First Name
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="firstName"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="firstName"
+              />
+              <p v-else>{{ firstName }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="middleName"
+              >
+                Middle Name
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="middleName"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="middleName"
+              />
+              <p v-else>{{ middleName }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="surname"
+              >
+                Surname
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="surname"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="surname"
+              />
+              <p v-else>{{ surname }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="username"
+              >
+                Username
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="username"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="username"
+              />
+              <p v-else>{{ username }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="email"
+              >
+                Email address
+              </label>
+              <input
+                v-if="editing"
+                type="email"
+                id="email"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="email"
+              />
+              <p v-else>{{ email }}</p>
+            </div>
           </div>
         </div>
-      </div>
+
+        <hr class="mt-6 border-b-1 border-blueGray-300" />
+
+        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+          Contact Information
+        </h6>
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-12/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="contact"
+              >
+                Contact
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="contact"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="contact"
+              />
+              <p v-else>{{ contact }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-12/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="address"
+              >
+                Address
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="address"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="address"
+              />
+              <p v-else>{{ address }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="city"
+              >
+                City
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="city"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="city"
+              />
+              <p v-else>{{ city }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="country"
+              >
+                Country
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="country"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="country"
+              />
+              <p v-else>{{ country }}</p>
+            </div>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                for="postalCode"
+              >
+                Postal Code
+              </label>
+              <input
+                v-if="editing"
+                type="text"
+                id="postalCode"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                v-model="postalCode"
+              />
+              <p v-else>{{ postalCode }}</p>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </template>
-<script>
-import team2 from "@/assets/img/team-2-800x800.jpg";
 
+<script>
 export default {
   data() {
     return {
-      team2,
+      editing: false,
+      username: "Khidd",
+      email: "kennedy@example.com",
+      id: "ID Info",
+      occupation: "Occupation Info",
+      firstName: "First Name Info",
+      middleName: "Middle Name Info",
+      surname: "Surname Info",
+      contact: "Contact Info",
+      address: "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09",
+      city: "New York",
+      country: "United States",
+      postalCode: "Postal Code",
     };
+  },
+  methods: {
+    editDetails() {
+      this.editing = true;
+    },
+    saveDetails() {
+      this.editing = false;
+      // Save the updated details to the server or perform any necessary actions
+    },
   },
 };
 </script>

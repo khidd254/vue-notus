@@ -82,7 +82,7 @@
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
           <li class="items-center">
             <router-link
-              to="/admin/dashboard"
+              to="/admin/customerprofile"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -106,7 +106,7 @@
 
           <li class="items-center">
             <router-link
-              to="/admin/settings"
+              to="/admin/accountdetails"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -130,7 +130,7 @@
 
           <li class="items-center">
             <router-link
-              to="/admin/tables"
+              to="/admin/loans"
               v-slot="{ href, navigate, isActive }"
             >
               <a
