@@ -157,7 +157,7 @@
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              <i class="fas fa-circle text-green-500 mr-2"></i> completed
+              <i class="fas fa-circle text-red-500 mr-2"></i> completed
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -194,7 +194,7 @@
                   : 'text-white',
               ]"
             >
-              10/12/2022
+              23/08/2001
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -209,7 +209,7 @@
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              <i class="fas fa-circle text-orange-500 mr-2"></i> pending
+              <i class="fas fa-circle text-yellow-500 mr-2"></i> incomplete
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -219,7 +219,7 @@
                   : 'text-white',
               ]"
             >
-             $0
+             $1,200
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -229,7 +229,7 @@
                   : 'text-white',
               ]"
             >
-             $0
+             $1,300
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
@@ -246,7 +246,7 @@
                   : 'text-white',
               ]"
             >
-              07/01/2023
+              07/11/2020
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -256,12 +256,12 @@
                   : 'text-white',
               ]"
             >
-              $3,800 USD
+              $4,200 USD
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              <i class="fas fa-circle text-green-500 mr-2"></i> completed
+              <i class="fas fa-circle text-red-500 mr-2"></i> completed
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -271,7 +271,7 @@
                   : 'text-white',
               ]"
             >
-              $3,800 USD
+              $4,200 USD
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
