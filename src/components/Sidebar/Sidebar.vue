@@ -153,7 +153,7 @@
           </li>
 
           <li class="items-center">
-            <router-link to="/admin/maps" v-slot="{ href, navigate, isActive }">
+            <router-link to="/admin/transaction" v-slot="{ href, navigate, isActive }">
               <a
                 :href="href"
                 @click="navigate"

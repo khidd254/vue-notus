@@ -20,7 +20,7 @@ import Auth from "@/layouts/Auth.vue";
 import Customerprofile from "@/views/admin/Customerprofile.vue";
 import Accountdetails from "@/views/admin/Accountdetails.vue";
 import Loans from "@/views/admin/Loans.vue";
-import Maps from "@/views/admin/Maps.vue";
+import Transaction from "@/views/admin/Transaction.vue";
 
 // views for Auth layout
 
@@ -30,9 +30,6 @@ import Forget from "@/views/auth/Forget.vue";
 
 
 // views without layouts
-
-import Landing from "@/views/Landing.vue";
-import Profile from "@/views/Profile.vue";
 import Index from "@/views/Index.vue";
 
 // routes
@@ -56,8 +53,8 @@ const routes = [
         component: Loans,
       },
       {
-        path: "/admin/maps",
-        component: Maps,
+        path: "/admin/transaction",
+        component: Transaction,
       },
     ],
   },
@@ -79,14 +76,6 @@ const routes = [
         component: Forget ,
       },
     ],
-  },
-  {
-    path: "/landing",
-    component: Landing,
-  },
-  {
-    path: "/profile",
-    component: Profile,
   },
   {
     path: "/",
