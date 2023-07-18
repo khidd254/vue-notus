@@ -21,6 +21,7 @@ import Customerprofile from "@/views/admin/Customerprofile.vue";
 import Accountdetails from "@/views/admin/Accountdetails.vue";
 import Loans from "@/views/admin/Loans.vue";
 import Transaction from "@/views/admin/Transaction.vue";
+import Dashboard from "@/views/admin/Dashboard.vue";
 
 // views for Auth layout
 
@@ -52,10 +53,16 @@ const routes = [
         path: "/admin/loans",
         component: Loans,
       },
+      
       {
         path: "/admin/transaction",
         component: Transaction,
       },
+      {
+        path: "/admin/dashboard",
+        component: Dashboard,
+      },
+      
     ],
   },
   {
@@ -64,7 +71,7 @@ const routes = [
     component: Auth,
     children: [
       {
-        path: "/auth/login",
+        path: "/",
         component: Login,
       },
       {

@@ -1,118 +1,81 @@
 <template>
-  <div class="container mx-auto px-4 h-full">
-    <div class="flex content-center items-center justify-center h-full">
-      <div class="w-full lg:w-4/12 px-4">
-        <div
-          class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0"
-        >
-          <div class="rounded-t mb-0 px-6 py-6">
-            <div class="text-center mb-3">
-              <h6 class="text-blueGray-500 text-sm font-bold">ACCOUNT DETAILS</h6>
-            </div>
-          </div>
-          <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-            <form>
-              <div class="relative w-full mb-3">
-                <label
-                  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  for="accountNumber"
-                >
-                  Account Number
-                </label>
-                <input
-                  type="text"
-                  id="accountNumber"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Account Number"
-                  v-model="accountNumber"
-                  :readonly="isSaved"
-                />
-              </div>
-
-              <div class="relative w-full mb-3">
-                <label
-                  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  for="accountType"
-                >
-                  Type of Account
-                </label>
-                <select
-                  id="accountType"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  v-model="accountType"
-                  :disabled="isSaved"
-                >
-                  <option value="family">Family</option>
-                  <option value="personal">Personal</option>
-                  <option value="joint">Joint</option>
-                  <option value="business">Business</option>
-                  <option value="company">Company</option>
-                </select>
-              </div>
-
-              <div class="relative w-full mb-3">
-                <label
-                  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  for="openedDate"
-                >
-                  Date Opened
-                </label>
-                <input
-                  type="date"
-                  id="openedDate"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  v-model="openedDate"
-                  :readonly="isSaved"
-                />
-              </div>
-
-              <div class="relative w-full mb-3">
-                <label
-                  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  for="cardNumber"
-                >
-                  Card Number
-                </label>
-                <input
-                  type="text"
-                  id="cardNumber"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Card Number"
-                  v-model="cardNumber"
-                  :readonly="isSaved"
-                />
-              </div>
-
-              <div class="relative w-full mb-3">
-                <label
-                  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                  for="openedBranch"
-                >
-                  Branch Opened From
-                </label>
-                <input
-                  type="text"
-                  id="openedBranch"
-                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  placeholder="Opened Branch"
-                  v-model="openedBranch"
-                  :readonly="isSaved"
-                />
-              </div>
-
-              <div class="text-center mt-6">
-                <button
-                  v-if="!isSaved"
-                  type="button"
-                  class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                  @click="saveDetails"
-                >
-                  Save
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+  <div>
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+      <div class="text-center flex justify-between">
+        <h6 class="text-blueGray-700 text-xl font-bold">ACCOUNT DETAILS</h6>
+      </div>
+    </div>
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+      <table class="min-w-full bg-white border-collapse">
+        <thead>
+          <tr>
+            <th class="py-3 px-6 bg-blueGray-50 font-bold uppercase text-sm text-blueGray-500 border-b border-blueGray-200">
+              Account Number
+            </th>
+            <th class="py-3 px-6 bg-blueGray-50 font-bold uppercase text-sm text-blueGray-500 border-b border-blueGray-200">
+              Account Type
+            </th>
+            <th class="py-3 px-6 bg-blueGray-50 font-bold uppercase text-sm text-blueGray-500 border-b border-blueGray-200">
+              Date Opened
+            </th>
+            <th class="py-3 px-6 bg-blueGray-50 font-bold uppercase text-sm text-blueGray-500 border-b border-blueGray-200">
+              Card Number
+            </th>
+            <th class="py-3 px-6 bg-blueGray-50 font-bold uppercase text-sm text-blueGray-500 border-b border-blueGray-200">
+              Branch Opened From
+            </th>
+            <th class="py-3 px-6 bg-blueGray-50 font-bold uppercase text-sm text-blueGray-500 border-b border-blueGray-200">
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-if="accountDetails.length === 0">
+            <td colspan="6" class="text-center py-2 px-3">No accounts added</td>
+          </tr>
+          <tr v-for="(account, index) in accountDetails" :key="index">
+            <td class="py-2 px-3 border-b border-blueGray-300">
+              <div v-if="!account.editing">{{ account.accountNumber }}</div>
+              <template v-else>
+                <input type="text" v-model="account.accountNumber" class="border-0 w-full">
+              </template>
+            </td>
+            <td class="py-2 px-3 border-b border-blueGray-300">
+              <div v-if="!account.editing">{{ account.accountType }}</div>
+              <template v-else>
+                <input type="text" v-model="account.accountType" class="border-0 w-full">
+              </template>
+            </td>
+            <td class="py-2 px-3 border-b border-blueGray-300">
+              <div v-if="!account.editing">{{ account.dateOpened }}</div>
+              <template v-else>
+                <input type="date" v-model="account.dateOpened" class="border-0 w-full">
+              </template>
+            </td>
+            <td class="py-2 px-3 border-b border-blueGray-300">
+              <div v-if="!account.editing">{{ account.cardNumber }}</div>
+              <template v-else>
+                <input type="text" v-model="account.cardNumber" class="border-0 w-full">
+              </template>
+            </td>
+            <td class="py-2 px-3 border-b border-blueGray-300">
+              <div v-if="!account.editing">{{ account.branchOpenedFrom }}</div>
+              <template v-else>
+                <input type="text" v-model="account.branchOpenedFrom" class="border-0 w-full">
+              </template>
+            </td>
+            <td class="py-2 px-3 border-b border-blueGray-300">
+              <button class="text-blue-500 font-bold" type="button" @click="toggleEdit(account)">
+                {{ account.editing ? 'Save' : 'Edit' }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-4">
+        <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button" @click="addAccount" :disabled="accountDetails.length && accountDetails[accountDetails.length - 1].editing">
+          Add Account
+        </button>
       </div>
     </div>
   </div>
@@ -122,54 +85,44 @@
 export default {
   data() {
     return {
-      accountNumber: "",
-      accountType: "",
-      openedDate: "",
-      cardNumber: "",
-      openedBranch: "",
-      isSaved: false,
+      accountDetails: [
+        {
+          accountNumber: '',
+          accountType: '',
+          dateOpened: '',
+          cardNumber: '',
+          branchOpenedFrom: '',
+          editing: true,
+        },
+      ],
     };
   },
   methods: {
-    saveDetails() {
-      // Check if all fields are filled
-      if (
-        this.accountNumber &&
-        this.accountType &&
-        this.openedDate &&
-        this.cardNumber &&
-        this.openedBranch
-      ) {
-        // Disable editing of fields
-        this.disableFields();
-
-        // Alert user before saving
-        if (confirm("Are you sure you want to save the details?")) {
-          // Perform actions to save the details
-          alert("Account details saved!");
-          this.isSaved = true;
-        } else {
-          // Enable editing of fields
-          this.enableFields();
+    toggleEdit(account) {
+      if (account.editing) {
+        // Check if any field is empty before saving
+        if (
+          account.accountNumber === '' ||
+          account.accountType === '' ||
+          account.dateOpened === '' ||
+          account.cardNumber === '' ||
+          account.branchOpenedFrom === ''
+        ) {
+          // Display an error message or handle the validation as per your requirement
+          alert('Please fill in all fields');
+          return;
         }
-      } else {
-        alert("Please fill in all fields!");
       }
+      account.editing = !account.editing;
     },
-    disableFields() {
-      // Disable editing of fields
-      document.querySelectorAll("input, select").forEach((el) => {
-        el.setAttribute("readonly", "readonly");
-        el.classList.add("bg-blueGray-100");
-        el.classList.remove("bg-white");
-      });
-    },
-    enableFields() {
-      // Enable editing of fields
-      document.querySelectorAll("input, select").forEach((el) => {
-        el.removeAttribute("readonly");
-        el.classList.remove("bg-blueGray-100");
-        el.classList.add("bg-white");
+    addAccount() {
+      this.accountDetails.push({
+        accountNumber: '',
+        accountType: '',
+        dateOpened: '',
+        cardNumber: '',
+        branchOpenedFrom: '',
+        editing: true,
       });
     },
   },

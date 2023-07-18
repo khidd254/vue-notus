@@ -4,7 +4,7 @@
   >
     <div class="rounded-t bg-white mb-0 px-6 py-6">
       <div class="text-center flex justify-between">
-        <h6 class="text-blueGray-700 text-xl font-bold">MY ACCOUNT DETAILS</h6>
+        <h6 class="text-blueGray-700 text-xl font-bold">CUSTOMER PROFILE</h6>
         <button
           v-if="!editing"
           class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
@@ -228,14 +228,14 @@ export default {
   data() {
     return {
       editing: false,
-      username: "Khidd",
-      email: "kennedy@example.com",
-      id: "ID Info",
-      occupation: "Occupation Info",
-      firstName: "First Name Info",
-      middleName: "Middle Name Info",
-      surname: "Surname Info",
-      contact: "Contact Info",
+      username: "Username",
+      email: "email@example.com",
+      id: "ID",
+      occupation: "Occupation ",
+      firstName: "First Name ",
+      middleName: "Middle Name ",
+      surname: "Surname ",
+      contact: "Contact ",
       address: "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09",
       city: "New York",
       country: "United States",

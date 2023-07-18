@@ -82,6 +82,29 @@
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
           <li class="items-center">
             <router-link
+              to="/admin/dashboard"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-emerald-500 hover:text-emerald-600'
+                    : 'text-blueGray-700 hover:text-blueGray-500',
+                ]"
+              >
+                <i
+                  class="fas fa-tv mr-2 text-sm"
+                  :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
+                ></i>
+                Dashboard
+              </a>
+            </router-link>
+          </li>
+          <li class="items-center">
+            <router-link
               to="/admin/customerprofile"
               v-slot="{ href, navigate, isActive }"
             >
@@ -172,41 +195,7 @@
               </a>
             </router-link>
           </li>
-        </ul>
-
-        <!-- Divider -->
-        <hr class="my-4 md:min-w-full" />
-        <!-- Heading -->
-        <h6
-          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-        >
-          Quick navigation pages
-        </h6>
-        <!-- Navigation -->
-
-        <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-          <li class="items-center">
-            <router-link
-              class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-              to="/auth/login"
-            >
-              <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
-              Login
-            </router-link>
-          </li>
-
-          <li class="items-center">
-            <router-link
-              class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-              to="/auth/register"
-            >
-              <i
-                class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"
-              ></i>
-              Register
-            </router-link>
-          </li>
-        </ul>
+        </ul>   
       </div>
     </div>
   </nav>
